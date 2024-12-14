@@ -14,16 +14,6 @@ export class CustomersService {
             id: 2,
            name: "Ifeolowa Sunday",
             email: "test3@gmail.com"        
-        },
-        {
-            id: 3,
-           name: "Emeka Chizoba",
-            email: "test3@gmail.com"        
-        },
-        {
-            id: 4,
-           name: "Ogadagidi Onwa",
-            email: "test4@gmail.com"        
         }
     ]
 
