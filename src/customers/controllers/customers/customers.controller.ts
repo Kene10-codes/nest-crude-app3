@@ -1,6 +1,7 @@
-import { Body, Controller, Get, HttpException, HttpStatus, Param, ParseIntPipe, Post, Req, Res, UsePipes, ValidationPipe} from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, Param, ParseIntPipe, Post, Req, Res, UseInterceptors, UsePipes, ValidationPipe} from '@nestjs/common';
 import { Request, Response } from 'express';
 import { RegisterDto } from 'src/customers/dtos/register.dto';
+import { BadRequestException } from 'src/customers/exceptions/BadRequest';
 import { CustomersService } from 'src/customers/services/customers/customers.service';
 
 @Controller('customers')
@@ -24,7 +25,7 @@ export class CustomersController {
         return customer
        }
        else {
-        throw new HttpException("User not found!", HttpStatus.NOT_FOUND)
+        throw new BadRequestException()
        }
     }
 
