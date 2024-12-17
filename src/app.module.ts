@@ -5,6 +5,7 @@ import { CustomersModule } from './customers/customers.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DB_INFO } from './constants/constants';
+import { AuthModule } from './auth/auth.module';
 import entities from './users/typeorm';
 
 
@@ -19,7 +20,7 @@ import entities from './users/typeorm';
     entities,
     synchronize: true
 
-  })],
+  }), AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -11,23 +11,6 @@ export class UsersController {
              private readonly userService: UsersService
              ){}
 
-  @Get()
-  getUsers(){
-    return this.userService.getUsers()
-  }
-
-  @UseInterceptors(ClassSerializerInterceptor)
-  @UseFilters(HttpExceptionsFilter)
-  @Get(':username')
-  getUser(@Param('username') username: string) {
-     const user = this.userService.getUserById(username)
-
-    if(!user) {
-      throw new NotFoundException()
-    } 
-    return new SerializedUser(user);
-  }
-
   @Post('create')
   @UsePipes(new ValidationPipe)
   createUser(@Body() user: CreateUserDto) {

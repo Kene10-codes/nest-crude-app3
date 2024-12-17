@@ -11,13 +11,13 @@ export class User {
     id: number;
 
     @Column({
-        name: 'email',
         nullable: false
     })
     username: string;
 
     @Column({
-        nullable: false
+        nullable: false,
+        name: 'email_address'
     })
     email: string;
 
