@@ -10,6 +10,6 @@ import { User } from './typeorm';
     provide: 'USER_SERVICE',
     useClass: UsersService
   }],
-  controllers: [UsersController]
+  controllers: [UsersController],
 })
 export class UsersModule {}

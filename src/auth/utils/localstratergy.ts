@@ -21,6 +21,6 @@ export class LocalStorage extends PassportStrategy(Strategy) {
         throw new UnauthorizedException()
     }
      
-  }
+  } 
 
 }

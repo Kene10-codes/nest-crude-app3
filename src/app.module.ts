@@ -10,7 +10,7 @@ import entities from './users/typeorm';
 
 
 @Module({
-  imports: [CustomersModule, UsersModule, TypeOrmModule.forRoot({
+  imports: [CustomersModule, UsersModule, AuthModule, TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
     port: DB_INFO.port,
@@ -20,7 +20,7 @@ import entities from './users/typeorm';
     entities,
     synchronize: true
 
-  }), AuthModule],
+  })],
   controllers: [AppController],
   providers: [AppService],
 })

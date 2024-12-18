@@ -18,4 +18,9 @@ export class UsersController {
   }
 
 
+  @Get(":username")
+  findUserByUsername(@Param('username') username: string) {
+    return this.userService.findUserByUsername(username)
+  }
+
 }
