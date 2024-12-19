@@ -13,7 +13,6 @@ export class LocalStorage extends PassportStrategy(Strategy) {
   }
 
   async validate(username: string, password: string) {
-    console.log("inside local stratergy")
     const userDB = await this.authService.validaterUser(username, password)
     if(userDB) {
         return userDB

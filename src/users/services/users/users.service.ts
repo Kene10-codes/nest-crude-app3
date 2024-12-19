@@ -23,7 +23,7 @@ export class UsersService {
     }
 
     async findUserByUsername(username: any) {
-       const user =  await this.userRepository.findOne(username)
+       const user =  await this.userRepository.findOneBy({username})
        if(user) {
         return user;
        } else {

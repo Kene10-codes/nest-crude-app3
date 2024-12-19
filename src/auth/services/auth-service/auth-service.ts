@@ -8,12 +8,11 @@ export class AuthService {
 
    async  validaterUser(username: string, password: string) {
       const user = await this.userService.findUserByUsername(username)
-      console.log("inside auth service")
       if(user){
-        console.log(user)
         return user;
         // const matched = comparePassword(password, user.password)
         // if(matched){
+        //   console.log(user)
         //   return user
         // } else {
         //   throw new NotFoundException()

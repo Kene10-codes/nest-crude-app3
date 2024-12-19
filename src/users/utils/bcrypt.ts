@@ -6,6 +6,6 @@ export function encodeHashPassword(rawPassword: string) {
 }
 
 
-export function comparePassword(rawPassword, hashPassword) {
+export function comparePassword(rawPassword: string, hashPassword: string | number) {
     return bcrypt.compare(rawPassword, hashPassword)
 }

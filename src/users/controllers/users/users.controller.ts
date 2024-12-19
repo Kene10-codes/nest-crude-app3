@@ -4,6 +4,7 @@ import { HttpExceptionsFilter } from 'src/users/filters/HttpException';
 import { UsersService } from 'src/users/services/users/users.service';
 import { SerializedUser } from 'src/users/types/user';
 
+
 @Controller('users')
 export class UsersController {
   constructor(
@@ -23,4 +24,8 @@ export class UsersController {
     return this.userService.findUserByUsername(username)
   }
 
+  @Get(':id')
+  findUserById(@Param('id') id: number) {
+    return id
+  }
 }
